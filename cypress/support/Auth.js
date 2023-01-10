@@ -8,7 +8,7 @@ export default async function loadToken() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "email": signUpData.email,
+      "username": signUpData.email,
       "password": signUpData.password
     })
   });

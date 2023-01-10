@@ -11,7 +11,7 @@ describe('Create User', () => {
   let accessToken
   before(async () => {
     const response = await loadToken()
-    accessToken = response.body.Authorization
+    accessToken = response.Authorization
   })
 
   it.only('Create user with valid data should be success register', () => {
@@ -26,19 +26,13 @@ describe('Create User', () => {
           "firstname": faker.name.fullName(),
           "lastname": faker.name.lastName(),
           "username": faker.name.middleName(),
-          "password1": abcde12345,
-          "password2": abcde12345,
+          "password1": 'abcde12345',
+          "password2": 'abcde12345',
         }
       })
       .then((response) => {
         expect(response.status).to.be.equal(200);
         expect(response.body.success).to.equal("Requested operation has completed successfully.")
-
-        emailExist = response.body.data.email
-        employeeCode = response.body.data.employee_code
-        const id = response.body.data.id
-        localStorage.setItem("id", id)
-        cy.setCookie('id', id.toString())
 
       })
   })
