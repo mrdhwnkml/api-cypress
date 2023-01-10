@@ -1,0 +1,24 @@
+stages:
+  - test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .npm/
+
+test:
+  image: cypress/browsers:node16.18.0-chrome85-ff81
+  stage: test
+  script:
+    # install dependencies
+    - npm install
+    - npm run cy:run
+    - npm run report:merge
+    - npm run report:mocha
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+    expire_in: 1 day
