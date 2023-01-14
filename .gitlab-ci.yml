@@ -6,6 +6,8 @@ stages:
 
 Cypress Test:
   script:
+    - yum install -y git
+    - git --version
     - npm install
     - npm run report:clean
     - npm run test:user
