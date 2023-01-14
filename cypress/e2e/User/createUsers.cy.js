@@ -32,7 +32,7 @@ describe('Create User', () => {
         }
       })
       .then((response) => {
-        expect(response.status).to.be.equal(200);
+        expect(response.status).to.be.equal(201);
         expect(response.body.success).to.equal("Requested operation has completed successfully.")
         cy.log(accessToken)
       })
