@@ -1,17 +1,11 @@
-include:
-  
 stages:
   - test
 
 
-Cypress Test:
+test:
+  stage: test
+
   script:
-    - whoami
-    - pwd
-    - locate npm
-    - echo ${PATH}
-    - which npm
-    - ls -lh $(which npm)
     - npm install
     - npm run report:clean
     - npm run test:user
