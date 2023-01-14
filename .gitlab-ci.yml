@@ -8,7 +8,6 @@ test:
   stage: test
 
   script:
-    - npm install -g gitlab-ci-local
     - npm install
     - npm run report:clean
     - npm run test:user
