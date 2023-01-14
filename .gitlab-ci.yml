@@ -9,3 +9,5 @@ Cypress Test:
     - npm install
     - npm run report:clean
     - npm run test:user
+    - npm run report:merge
+    - npm run report:mocha
