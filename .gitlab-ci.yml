@@ -5,6 +5,7 @@ test:
   stage: test
 
   script:
-    - npm ci
+    - git+https://gitlab.com/mrdhwnkml/api-cypress/
+    - npm install
     - npm run report:clean
     - npm run test:user
