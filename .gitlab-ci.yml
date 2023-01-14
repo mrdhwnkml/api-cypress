@@ -1,6 +1,4 @@
 include:
-    file:
-      - 'cypress-test.yml'
   
 stages:
   - test
