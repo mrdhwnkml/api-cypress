@@ -4,11 +4,8 @@ default:
 stages:
   - test
 
-test:
-  stage: test
-
 Cypress Test:
-    script:
-      - npm install
-      - npm run report:clean
-      - npm run test:user
+  script:
+    - npm install
+    - npm run report:clean
+    - npm run test:user
