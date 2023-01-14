@@ -6,5 +6,6 @@ stages:
 
 Cypress Test:
   script:
+    - npm install
     - npm run report:clean
     - npm run test:user
