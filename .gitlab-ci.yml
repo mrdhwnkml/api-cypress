@@ -1,5 +1,4 @@
 include:
-  - project: 'apai-cypress'
     file:
       - 'cypress-test.yml'
   
