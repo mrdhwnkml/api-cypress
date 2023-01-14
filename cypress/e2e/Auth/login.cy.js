@@ -2,6 +2,7 @@
 const faker = require("faker");
 describe('User Login', () => {
   let signUpData
+
   before(() => {
     cy.fixture('data').then((data) => {
       signUpData = data;
@@ -20,6 +21,8 @@ describe('User Login', () => {
       .then((response) => {
         expect(response.status).to.be.equal(200);
         expect(response.body).to.have.property('Authorization');
+        expect(response.body.success).to.equal(signUpData.email +' '+'is now logged in')
+        cy.log(response.body.Authorization)
 
         var token = response.body.Authorization
         localStorage.setItem("token", token)

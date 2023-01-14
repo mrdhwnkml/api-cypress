@@ -1,24 +1,13 @@
+include:
+  - project: 'apai-cypress'
+    file:
+      - 'cypress-test.yml'
+  
 stages:
   - test
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
-    - .npm/
 
-test:
-  image: cypress/browsers:node16.18.0-chrome85-ff81
-  stage: test
+Cypress Test:
   script:
-    # install dependencies
-    - npm install
-    - npm run cy:run
-    - npm run report:merge
-    - npm run report:mocha
-  artifacts:
-    when: always
-    paths:
-      - cypress/videos/**/*.mp4
-      - cypress/screenshots/**/*.png
-    expire_in: 1 day
+    - npm run report:clean
+    - npm run test:user
