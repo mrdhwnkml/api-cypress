@@ -62,6 +62,7 @@
   "dependencies": {
     "beautify": "^0.0.8",
     "cypress-plugin-api": "^1.2.3",
+    "date-fns": "^2.29.3",
     "fs-utils": "^0.7.0",
     "reload": "^3.2.0"
   }

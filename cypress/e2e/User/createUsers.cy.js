@@ -5,8 +5,6 @@ import {
 import loadToken from "../../support/Auth"
 import userData from '../../fixtures/data.json'
 
-let emailExist
-let employeeCode
 describe('Create User', () => {
   let accessToken
   before(async () => {
@@ -15,7 +13,7 @@ describe('Create User', () => {
    
   })
 
-  it.only('Create user with valid data should be success register', () => {
+  it('Create user with valid data should be success register', () => {
     cy.api({
         method: 'POST',
         url: '/api/admin/addUser',

@@ -10,4 +10,4 @@ test:
   script:
     - npm install
     - npm run report:clean
-    - npm run test:user
+    - npm run e2e
