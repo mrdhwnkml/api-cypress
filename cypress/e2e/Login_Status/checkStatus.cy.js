@@ -15,7 +15,7 @@ describe('Login Status', () => {
    
   })
 
-  it('User check session(login) of specific user => if = true', () => {
+  it('User check session(login) of specific user => if = TRUE', () => {
     cy.api({
         method: 'GET',
         url: 'api/login',
@@ -40,7 +40,7 @@ describe('Login Status', () => {
       })
   })
 
-  it('User check session(logout) of specific user => if = false', () => {
+  it('User check session(logout) of specific user => if = FALSE', () => {
     cy.api({
         method: 'GET',
         url: 'api/login',
