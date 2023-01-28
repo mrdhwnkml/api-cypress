@@ -15,7 +15,7 @@ describe('Get Account', () => {
    
   })
 
-  it.only('User get account be success success', () => {
+  it.only('User get account should be success success', () => {
     cy.api({
         method: 'GET',
         url: '/api/account',

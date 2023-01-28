@@ -3,8 +3,6 @@ import {
   faker
 } from '@faker-js/faker';
 
-
-
 import loadToken from "../../support/Auth"
 import userData from '../../fixtures/data.json'
 
