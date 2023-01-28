@@ -8,10 +8,4 @@ Cypress Test:
   script:
     - npm install
     - npm run report:clean
-<<<<<<< HEAD
     - npm run e2e
-=======
-    - npm run test:user
-    - npm run report:merge
-    - npm run report:mocha
->>>>>>> 643f92141541eba90aa0a48e637437da1be2429e
