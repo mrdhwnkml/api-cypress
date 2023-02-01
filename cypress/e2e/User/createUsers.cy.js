@@ -19,9 +19,9 @@ describe('Create User', () => {
         Authorization: 'Bearer ' + accessToken,
       },
       body: {
-        firstname: faker.name.fullName(),
-        lastname: faker.name.lastName(),
-        username: faker.name.middleName(),
+                 firstname: faker.name.fullName(),
+             lastname: faker.name.lastName(),
+             username: faker.name.middleName(),
         password1: 'abcde12345',
         password2: 'abcde12345',
       },
