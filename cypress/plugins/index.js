@@ -1,20 +1,20 @@
 /// <reference types="cypress" />
 
-const faker = require('faker');
+const faker = require('faker')
 
 /**
  * @type {Cypress.PluginConfig}
  */
 
 module.exports = (on, config) => {
-  on("task", {
+  on('task', {
     freshUser() {
       user = {
-        "username": "jsmith",
-        "password": "demo1234"
-      };
-      return user;
-    }
+        username: 'jsmith',
+        password: 'demo1234',
+      }
+      return user
+    },
   })
   return config
 }

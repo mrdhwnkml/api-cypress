@@ -1,4 +1,3 @@
-
 # qa-cypress
 
 Frontend testing for New Core using [Cypress](https://cypress.io)
@@ -7,9 +6,9 @@ Frontend testing for New Core using [Cypress](https://cypress.io)
 
 - [Table of Contents](#markdown-header-table-of-contents)
 - [Getting Started](#markdown-header-getting-started)
-    - [Prerequisites](#markdown-header-prerequisites)
-    - [Installing](#markdown-header-installing)
-    - [Usage](#markdown-header-usage)
+  - [Prerequisites](#markdown-header-prerequisites)
+  - [Installing](#markdown-header-installing)
+  - [Usage](#markdown-header-usage)
 - [Coding Style and Rules](#markdown-header-coding-style-and-rules)
 - [Folder Structure](#markdown-header-folder-structure)
 - [Spec File](#markdown-header-spec-file)
@@ -17,15 +16,15 @@ Frontend testing for New Core using [Cypress](https://cypress.io)
 - [Variable Declaration and Function Expression](#markdown-header-variable-declaration-and-function-expression)
 - [Pre-Commit Hook](#markdown-header-pre-commit-hook)
 - [Describe and It](#markdown-header-describe-and-it)
-    - [How to Use Describe and It](#markdown-header-how-to-use-describe-and-it)
-    - [it() is Only For Test Case](#markdown-header-it-is-only-for-test-case)
-    - [Skipping Test](#markdown-header-skipping-test)
-    - [Smoke Test](#markdown-header-smoke-test)
-    - [Regression Test](#markdown-header-regression-test)
-    - [Case: Testing Multiple Tabs On Page](#markdown-header-case-testing-multiple-tabs-on-page)
+  - [How to Use Describe and It](#markdown-header-how-to-use-describe-and-it)
+  - [it() is Only For Test Case](#markdown-header-it-is-only-for-test-case)
+  - [Skipping Test](#markdown-header-skipping-test)
+  - [Smoke Test](#markdown-header-smoke-test)
+  - [Regression Test](#markdown-header-regression-test)
+  - [Case: Testing Multiple Tabs On Page](#markdown-header-case-testing-multiple-tabs-on-page)
 - [Configuration](#markdown-header-configuration)
-    - [cypress.json and Cypress.config()](#markdown-header-cypressjson-and-cypressconfig)
-    - [Test Environment: Don't Hardcode baseUrl](#markdown-header-test-environment-dont-hardcode-baseurl)
+  - [cypress.json and Cypress.config()](#markdown-header-cypressjson-and-cypressconfig)
+  - [Test Environment: Don't Hardcode baseUrl](#markdown-header-test-environment-dont-hardcode-baseurl)
 - [Custom Commands](#markdown-header-custom-commands)
 - [Fixtures](#markdown-header-fixtures)
 - [Intelligent Code Completion](#markdown-header-intelligent-code-completion)
@@ -42,7 +41,7 @@ Install git and npm. For Debian/Ubuntu distribution:
 $ sudo apt install npm git
 ```
 
-For Windows, download installer using links below: 
+For Windows, download installer using links below:
 
 - [npm](https://nodejs.org/en/)
 - [git](https://git-scm.com/downloads)
@@ -86,11 +85,11 @@ Before contributing to this repository, please read and follow these rules:
 
 ### Folder Structure
 
-Folder name should be written in **Snake Case**. 
+Folder name should be written in **Snake Case**.
 
 Folder should be created per feature and folder name should related to test cases inside it.
 
-Folder should only contain a spec file, ***.cy.js**.
+Folder should only contain a spec file, **\*.cy.js**.
 
 ```
 cypress
@@ -109,7 +108,7 @@ cypress
 
 Spec file name should be written in **lowerCamelCase**, e.g. costumer_relation.cy.js
 
-As mentioned on Folder Structure section, every folder in /e2e should only contain a spec file, ***.cy.js**. Spec file contains sanity and negative test cases.
+As mentioned on Folder Structure section, every folder in /e2e should only contain a spec file, **\*.cy.js**. Spec file contains sanity and negative test cases.
 
 ### Variable and Function Naming
 
@@ -142,7 +141,7 @@ var fullName = faker.name.findName()
 // Good
 let fullName = faker.name.findName()
 ```
-  
+
 This also applies to function expression. Write function with ES6 arrow function.
 
 ```
@@ -159,21 +158,23 @@ const add = (a, b) => {
 
 ### Pre-Commit Hook
 
-We use pre-commit hook for js-beautify. 
+We use pre-commit hook for js-beautify.
 
 To add pre-commit hook (use Git Bash for Windows),
+
 ```
 $ cd api-cypress
 $ cp scripts/pre-commit .git/hooks/
 $ chmod +x .git/hooks/pre-commit
 ```
+
 ### Describe and It
 
 #### How to Use Describe and It
 
 - Use **describe()** to provide context for test cases inside it
-    - Use it to group test cases 
-    - Write feature name on **describe()**, e.g. "Customer Relation"
+  - Use it to group test cases
+  - Write feature name on **describe()**, e.g. "Customer Relation"
 - Write test case name inside **it()**
 
 ```
@@ -193,12 +194,12 @@ describe('User Login', () => {
     cy.api({
         method: 'POST',
         url: 'https://demo.testfire.net/api/login',
-        failOnStatusCode: false, 
+        failOnStatusCode: false,
         body: {
           "email": 'user.login@gmail.com',
           "password": 'password123'
         }
-      }) 
+      })
       .then((response) => {
         expect(response.status).to.be.equal(200);
         expect(response.body.data).to.have.property('token');
@@ -211,8 +212,7 @@ describe('User Login', () => {
 There are two mistakes from code above.
 
 1. **We don't implement steps! Please write test case as a whole inside it().**
-2. Even though execution order is correct, it's wrong to use it() for that case. Let's say that you are not going to fill password field to see what would happen. Your expectation would be it won't pass 'Submit login form'. But in reality, 'Fill phone number' and 'Fill OTP number' would be executed as well. You should use step() instead of it() so lines below failing step won't be executed. 
-
+2. Even though execution order is correct, it's wrong to use it() for that case. Let's say that you are not going to fill password field to see what would happen. Your expectation would be it won't pass 'Submit login form'. But in reality, 'Fill phone number' and 'Fill OTP number' would be executed as well. You should use step() instead of it() so lines below failing step won't be executed.
 
 #### Skipping Test
 
@@ -245,7 +245,7 @@ describe('Login', () => {
 })
 ```
 
-Then, to run test cases with #smoke only: 
+Then, to run test cases with #smoke only:
 
 ```
 npx cypress run -- --env grep='#smoke'
@@ -263,7 +263,7 @@ describe('Login', () => {
 })
 ```
 
-Then, to run test cases with #regression only: 
+Then, to run test cases with #regression only:
 
 ```
 npx cypress run -- --env grep='#regression'
@@ -303,7 +303,7 @@ describe('Invoice Financing', () => {
     before(() => {
         cy.visit("invoice-financing")
     })
-    describe('View loan detail', () => {	
+    describe('View loan detail', () => {
         beforeEach(() => {
             cy.get('#view-loan-detail').click()
         })
@@ -333,9 +333,9 @@ Always put something general inside configuration. For example, put variable tha
 If you need to get value from cypress.json, add **Cypress.config('key')** inside your spec file.
 
 ```
-    // This is just example. 
-    cy.request('POST', 'http://localhost:8888/users/admin', { 
-            apiKey: Cypress.config('apiKey') 
+    // This is just example.
+    cy.request('POST', 'http://localhost:8888/users/admin', {
+            apiKey: Cypress.config('apiKey')
     })
     .then((response) => {
         // response.body is automatically serialized into JSON
@@ -347,7 +347,7 @@ If you need to get value from cypress.json, add **Cypress.config('key')** inside
 
 #### Test Environment: Don't Hardcode baseUrl
 
-Don't write baseUrl or URL as environment variable inside cypress.json. 
+Don't write baseUrl or URL as environment variable inside cypress.json.
 
 Since we will be deploying test on different stages, we need to make our test cases deployment seamless. In order to achieve that, we need to define baseUrl in command line instead of hardcoding it.
 
@@ -380,7 +380,7 @@ Make sure that custom command is as general as possible. For example in front of
 - Redirect to User Preference page
 - Redirect to User Dashboard
 
-Based on those scenarios, **don't make login function that will assert only one of possible redirection**. Instead, make a login function that has no assertion. **Better yet, create login command that directly calls login endpoint because it will increase Cypress execution speed.** 
+Based on those scenarios, **don't make login function that will assert only one of possible redirection**. Instead, make a login function that has no assertion. **Better yet, create login command that directly calls login endpoint because it will increase Cypress execution speed.**
 
 Try to consult other QA engineers before deciding to make a custom command.
 

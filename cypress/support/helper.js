@@ -1,2 +1,2 @@
 const faker = require('faker')
-import 'cypress-file-upload';
+import 'cypress-file-upload'

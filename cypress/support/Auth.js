@@ -1,20 +1,20 @@
 import signUpData from '../fixtures/data.json'
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'
 
 export default async function loadToken() {
   const res = await fetch('/api/login', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      "username": signUpData.email,
-      "password": signUpData.password
-    })
-  });
+      username: signUpData.email,
+      password: signUpData.password,
+    }),
+  })
 
-  if (!res.ok) throw new Error(res.statusText);
-  const response = await res.json();
+  if (!res.ok) throw new Error(res.statusText)
+  const response = await res.json()
 
-  return response;
+  return response
 }
