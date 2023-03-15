@@ -50,7 +50,6 @@ describe('upload image kurir apps', async () => {
       formData.append('file', blob, 'gambar.png')
       formData.append('type', transactionEvidenceType)
 
-
       cy.request({
         method: 'POST',
         url: uploadImage_url + '/v1/upload/courier-app/image',

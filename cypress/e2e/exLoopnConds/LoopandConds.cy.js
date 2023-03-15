@@ -37,7 +37,7 @@ describe('Dispose List Pack', () => {
       expect(response.status).to.be.equal(200)
       expect(response.body.status).to.be.equal('success')
 
-      //Untuk mengambil total data di array. 
+      //Untuk mengambil total data di array.
       let getData = response.body.data
       //Untuk mengambil jumal data array. Ex: 10
       let newData = getData.length

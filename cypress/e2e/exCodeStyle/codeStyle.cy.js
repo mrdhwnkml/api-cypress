@@ -62,7 +62,7 @@ describe('Apply Voucher on Mobile', async () => {
       expect(response.body.status).to.be.equal('success')
     })
   })
- 
+
   it('Apply Voucher Type Total Discount with invalid Start date should error', () => {
     cy.api({
       method: 'POST',
@@ -117,5 +117,4 @@ describe('Apply Voucher on Mobile', async () => {
       expect(response.body.errors.redeem_code).to.be.equal('Voucher tidak berlaku untuk area')
     })
   })
- 
 })
