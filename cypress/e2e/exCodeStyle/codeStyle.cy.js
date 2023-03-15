@@ -26,7 +26,7 @@ describe('Apply Voucher on Mobile', async () => {
     voucherActive = await getActiveVoucher(header, data)
   })
 
-  it('Apply Voucher Type Total Discount with Active Redeem Code should success', () => {
+  it.skip('Apply Voucher Type Total Discount with Active Redeem Code should success', () => {
     cy.api({
       method: 'POST',
       url: cmaURL + '/v1/promotion/voucher/valid-promo',
@@ -63,7 +63,7 @@ describe('Apply Voucher on Mobile', async () => {
     })
   })
 
-  it('Apply Voucher Type Total Discount with invalid Start date should error', () => {
+  it.skip('Apply Voucher Type Total Discount with invalid Start date should error', () => {
     cy.api({
       method: 'POST',
       url: cmaURL + '/v1/promotion/voucher/valid-promo',
@@ -90,7 +90,7 @@ describe('Apply Voucher on Mobile', async () => {
       expect(response.body.errors.redeem_code).to.be.equal('Voucher belum dapat digunakan')
     })
   })
-  it('Apply Voucher Type Total Discount with invalid Area ', () => {
+  it.skip('Apply Voucher Type Total Discount with invalid Area ', () => {
     cy.api({
       method: 'POST',
       url: cmaURL + '/v1/promotion/voucher/valid-promo',

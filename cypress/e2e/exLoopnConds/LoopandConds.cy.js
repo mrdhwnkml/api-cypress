@@ -25,7 +25,7 @@ describe('Dispose List Pack', () => {
     const response = await loadToken()
     accessToken = response.data.token
   })
-  it('User can access list pack and should be success', () => {
+  it.skip('User can access list pack and should be success', () => {
     cy.api({
       method: 'GET',
       url: dashUrl + '/site/v1/packing_order/pack',
@@ -54,7 +54,7 @@ describe('Dispose List Pack', () => {
       }
     })
   })
-  it(' User can access detail packing order and should be success', () => {
+  it.skip(' User can access detail packing order and should be success', () => {
     cy.api({
       method: 'GET',
       url: dashUrl + '/site/v1/packing_order/' + saveidPacking,

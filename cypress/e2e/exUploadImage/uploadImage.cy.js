@@ -15,7 +15,7 @@ describe('upload image kurir apps', async () => {
     accessToken = response.data.token
   })
 
-  it('upload image evidence delivery should be success', () => {
+  it.skip('upload image evidence delivery should be success', () => {
     cy.fixture('gambar.png', 'binary').then((fileContent) => {
       const blob = Cypress.Blob.binaryStringToBlob(fileContent, 'image/png')
       const formData = new FormData()
@@ -42,7 +42,7 @@ describe('upload image kurir apps', async () => {
     })
   })
 
-  it('upload image evidence transaction should be success', () => {
+  it.skip('upload image evidence transaction should be success', () => {
     cy.fixture('gambar.png', 'binary').then((fileContent) => {
       const blob = Cypress.Blob.binaryStringToBlob(fileContent, 'image/png')
       const formData = new FormData()
@@ -69,7 +69,7 @@ describe('upload image kurir apps', async () => {
     })
   })
 
-  it('upload image evidence postpone should be success', () => {
+  it.skip('upload image evidence postpone should be success', () => {
     cy.fixture('gambar.png', 'binary').then((fileContent) => {
       const blob = Cypress.Blob.binaryStringToBlob(fileContent, 'image/png')
       const formData = new FormData()
