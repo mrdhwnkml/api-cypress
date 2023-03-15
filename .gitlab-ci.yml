@@ -8,4 +8,10 @@ Cypress Test:
   script:
     - npm install
     - npm run report:clean
-    - npm run e2e
+    - npm run test:transfer
+    - npm run test:user
+    - npm run test:LoginStatus
+    - npm run test:auth
+    - npm run test:account
+
+

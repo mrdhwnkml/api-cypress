@@ -8,8 +8,11 @@
     "index.js"
   ],
   "scripts": {
-    "test:campaign": "npx cypress run --spec cypress/e2e/Campaign/**/* --browser chrome",
+    "test:transfer": "npx cypress run --spec cypress/e2e/Transfer/**/* --browser chrome",
     "test:user": "npx cypress run --spec cypress/e2e/User/**/* --browser chrome",
+    "test:LoginStatus": "npx cypress run --spec cypress/e2e/Login_Status/**/* --browser chrome",
+    "test:auth": "npx cypress run --spec cypress/e2e/Auth/**/* --browser chrome",
+    "test:account": "npx cypress run --spec cypress/e2e/Account/**/* --browser chrome",
     "cy:open": "npx cypress open",
     "report:merge": "mochawesome-merge > index.json",
     "report:mocha": "marge index.json",
