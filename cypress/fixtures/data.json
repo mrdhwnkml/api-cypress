@@ -1,4 +1,10 @@
 {
   "email": "jsmith",
-  "password": "demo1234"
+  "password": "demo1234",
+  "header": {
+    "appVersion": 4005086,
+    "platform": "orca",
+    "Content-Type": "application/json"
+  }
 }
+
