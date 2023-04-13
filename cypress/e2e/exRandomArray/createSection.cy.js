@@ -32,7 +32,7 @@ describe('Create item section', () => {
     for (let i = 0; i < Math.round(Math.random() * (8 - 5)) + 5; i++) {
       regionId.push(responseListRegion.data[i].id)
     }
-    //Random 1
+    //Random 1 id region
     const responseList = await listadmDivision(accessTokenGP)
     regionID = responseList.data[faker.random.numeric(1)].region
   })
@@ -40,7 +40,7 @@ describe('Create item section', () => {
   it('Create item section with valid data should be success', () => {
     cy.api({
       method: 'POST',
-      url: dashUrl + '/campaign/v1/item_section',
+      url:  'endpoint',
       failOnStatusCode: false,
       headers: {
         Authorization: 'Bearer ' + accessToken,
