@@ -28,7 +28,7 @@ describe('Dispose List Pack', () => {
   it.skip('User can access list pack and should be success', () => {
     cy.api({
       method: 'GET',
-      url:  'endpoint',
+      url: 'endpoint',
       failOnStatusCode: false,
       headers: {
         Authorization: 'Bearer ' + accessToken,
@@ -57,7 +57,7 @@ describe('Dispose List Pack', () => {
   it.skip(' User can access detail packing order and should be success', () => {
     cy.api({
       method: 'GET',
-      url:  'endpoint',
+      url: 'endpoint',
       failOnStatusCode: false,
       headers: {
         Authorization: 'Bearer ' + accessToken,

@@ -40,7 +40,7 @@ describe('Create item section', () => {
   it('Create item section with valid data should be success', () => {
     cy.api({
       method: 'POST',
-      url:  'endpoint',
+      url: 'endpoint',
       failOnStatusCode: false,
       headers: {
         Authorization: 'Bearer ' + accessToken,

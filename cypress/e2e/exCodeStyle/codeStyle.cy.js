@@ -29,7 +29,7 @@ describe('Apply Voucher on Mobile', async () => {
   it.skip('Apply Voucher Type Total Discount with Active Redeem Code should success', () => {
     cy.api({
       method: 'POST',
-      url:  'endpoint',
+      url: 'endpoint',
       failOnStatusCode: false,
       headers: header,
       body: {

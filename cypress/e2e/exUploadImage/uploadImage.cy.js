@@ -25,7 +25,7 @@ describe('upload image kurir apps', async () => {
 
       cy.request({
         method: 'POST',
-        url:  'endpoint',
+        url: 'endpoint',
         failOnStatusCode: false,
         headers: {
           Authorization: 'Bearer ' + accessToken,
@@ -41,5 +41,4 @@ describe('upload image kurir apps', async () => {
       })
     })
   })
-
 })
