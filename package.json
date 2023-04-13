@@ -43,6 +43,7 @@
   },
   "homepage": "https://gitlab.com/mrdhwnkml/api-cypress#readme",
   "devDependencies": {
+    "@cypress/webpack-preprocessor": "^5.17.0",
     "@faker-js/faker": "^7.6.0",
     "@types/cypress": "^1.1.3",
     "allure-commandline": "^2.20.1",
