@@ -1,6 +1,6 @@
 /// <reference types ='Cypress'/>
 import { faker } from '@faker-js/faker'
-import loadToken from '@Support/Auth' 
+import loadToken from '@Support/Auth'
 
 describe('Create User', () => {
   let accessToken

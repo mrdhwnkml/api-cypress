@@ -66,5 +66,4 @@ describe('Create item section', () => {
       ItemSectionfinish_at = response.body.data.finish_at
     })
   })
-  
 })

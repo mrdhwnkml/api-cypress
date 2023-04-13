@@ -1,7 +1,6 @@
 /// <reference types ='Cypress'/>
 import loadToken from '@Support/Auth'
 
-
 let totalCredit
 let totalDebit
 let total10Transaction
