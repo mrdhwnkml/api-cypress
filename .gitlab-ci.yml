@@ -15,5 +15,5 @@ Cypress Test:
     - npm run test:account
 
 artifacts:
-    paths:
-      - cypress/support
+  paths:
+    - cypress/screenshots
