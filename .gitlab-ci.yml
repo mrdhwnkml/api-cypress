@@ -16,4 +16,4 @@ Cypress Test:
 
   artifacts:
     paths:
-      - cypress/screenshots
+      - cypress/artifacts
