@@ -13,7 +13,9 @@ Cypress Test:
     - npm run test:LoginStatus
     - npm run test:auth
     - npm run test:account
+    - npm run mochawesome-merge > index.json
+    - npm run marge index.json
+    - npm run rimraf mochawesome-report index.js
+    - npm run mochawesome-merge --reportDir mochawesome-report > mochawesome-report/output.html
+    - npm run marge mochawesome-report/output.html
 
-  artifacts:
-    paths:
-      - cypress/artifacts
