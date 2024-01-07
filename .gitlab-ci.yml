@@ -14,6 +14,6 @@ Cypress Test:
     - npm run test:auth
     - npm run test:account
 
-artifacts:
-  paths:
-    - cypress/screenshots
+  artifacts:
+    paths:
+      - cypress/screenshots
