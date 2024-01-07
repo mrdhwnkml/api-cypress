@@ -13,3 +13,7 @@ Cypress Test:
     - npm run test:LoginStatus
     - npm run test:auth
     - npm run test:account
+
+artifacts:
+    paths:
+      - cypress/support
