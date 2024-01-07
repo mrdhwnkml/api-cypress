@@ -13,11 +13,6 @@ Cypress Test:
     - npm run test:LoginStatus
     - npm run test:auth
     - npm run test:account
-    - npm install -g mochawesome
-    - npm install -g mochawesome-merge
-    - mkdir -p mochawesome-report 
-    - ls cypress/reports/
-    - mochawesome-merge cypress/reports/*.json > mochawesome-report/mochawesome.json
-    - mochawesome-report-generator mochawesome-report/mochawesome.json -t html -o mochawesome-report
+
 
 
