@@ -1,6 +1,6 @@
 /// <reference types ='Cypress'/>
 
-import loadToken from '../../../../support/Auth'
+import loadToken from '@Support/Auth'
 const dashUrl = Cypress.env('dasboard_url')
 
 describe('Dispose List Pack', () => {
@@ -28,7 +28,7 @@ describe('Dispose List Pack', () => {
   it.skip('User can access list pack and should be success', () => {
     cy.api({
       method: 'GET',
-      url: dashUrl + '/site/v1/packing_order/pack',
+      url: 'endpoint',
       failOnStatusCode: false,
       headers: {
         Authorization: 'Bearer ' + accessToken,
@@ -57,7 +57,7 @@ describe('Dispose List Pack', () => {
   it.skip(' User can access detail packing order and should be success', () => {
     cy.api({
       method: 'GET',
-      url: dashUrl + '/site/v1/packing_order/' + saveidPacking,
+      url: 'endpoint',
       failOnStatusCode: false,
       headers: {
         Authorization: 'Bearer ' + accessToken,

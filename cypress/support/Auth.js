@@ -1,5 +1,4 @@
 import signUpData from '../fixtures/data.json'
-import { faker } from '@faker-js/faker'
 
 export default async function loadToken() {
   const res = await fetch('/api/login', {

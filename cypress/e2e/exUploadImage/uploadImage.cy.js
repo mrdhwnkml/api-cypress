@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 import { faker } from '@faker-js/faker'
-import { loadTokenKurirApps } from '../../support/Auth'
+import { loadTokenKurirApps } from '@Support/Auth'
 const pic = '../fixtures/gambar.png'
 const deliveryEvidenceType = 'delivery_evidence'
 const transactionEvidenceType = 'transaction_evidence'
@@ -25,61 +25,7 @@ describe('upload image kurir apps', async () => {
 
       cy.request({
         method: 'POST',
-        url: uploadImage_url + '/v1/upload/courier-app/image',
-        failOnStatusCode: false,
-        headers: {
-          Authorization: 'Bearer ' + accessToken,
-          'Content-Type': 'multipart/form-data',
-        },
-        body: formData,
-        responseType: 'json',
-      }).then((response) => {
-        const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body)
-        const body = JSON.parse(bodyString)
-        expect(body.code).to.eq(200)
-        expect(body.data.url).to.not.be.null
-      })
-    })
-  })
-
-  it.skip('upload image evidence transaction should be success', () => {
-    cy.fixture('gambar.png', 'binary').then((fileContent) => {
-      const blob = Cypress.Blob.binaryStringToBlob(fileContent, 'image/png')
-      const formData = new FormData()
-
-      formData.append('file', blob, 'gambar.png')
-      formData.append('type', transactionEvidenceType)
-
-      cy.request({
-        method: 'POST',
-        url: uploadImage_url + '/v1/upload/courier-app/image',
-        failOnStatusCode: false,
-        headers: {
-          Authorization: 'Bearer ' + accessToken,
-          'Content-Type': 'multipart/form-data',
-        },
-        body: formData,
-        responseType: 'json',
-      }).then((response) => {
-        const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body)
-        const body = JSON.parse(bodyString)
-        expect(body.code).to.eq(200)
-        expect(body.data.url).to.not.be.null
-      })
-    })
-  })
-
-  it.skip('upload image evidence postpone should be success', () => {
-    cy.fixture('gambar.png', 'binary').then((fileContent) => {
-      const blob = Cypress.Blob.binaryStringToBlob(fileContent, 'image/png')
-      const formData = new FormData()
-
-      formData.append('file', blob, 'gambar.png')
-      formData.append('type', postponeEvidenceType)
-
-      cy.request({
-        method: 'POST',
-        url: uploadImage_url + '/v1/upload/courier-app/image',
+        url: 'endpoint',
         failOnStatusCode: false,
         headers: {
           Authorization: 'Bearer ' + accessToken,
