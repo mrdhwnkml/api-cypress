@@ -26,8 +26,7 @@
     "prepare": "husky install"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://gitlab.com/mrdhwnkml/api-cypress"
+    "type": "git"
   },
   "keywords": [
     "cypress",
