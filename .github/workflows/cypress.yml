@@ -46,7 +46,9 @@ jobs:
 
       # Merge and generate Mochawesome report
       - name: Merge Mochawesome reports
-        run: npm run report:merge
+        run: |
+          mkdir -p cypress/reports/json
+          npm run report:merge
 
       # Generate HTML report from merged JSON
       - name: Generate combined HTML report
