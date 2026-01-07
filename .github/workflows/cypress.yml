@@ -2,13 +2,13 @@ name: Cypress Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
   # ⏰ Scheduler: 23:30 WIB (16:30 UTC)
   schedule:
-    - cron: "30 16 * * *"
+    - cron: '30 16 * * *'
 
   # ▶ Bisa dijalankan manual dari UI
   workflow_dispatch:
@@ -43,6 +43,14 @@ jobs:
           npm run test:LoginStatus
           npm run test:auth
           npm run test:account
+
+      # Merge and generate Mochawesome report
+      - name: Merge Mochawesome reports
+        run: npm run report:merge
+
+      # Generate HTML report from merged JSON
+      - name: Generate combined HTML report
+        run: npm run report:generate
 
       # Upload report as artifact (buat download)
       - name: Upload HTML report artifact

@@ -10,6 +10,7 @@ module.exports = defineConfig({
     reportPageTitle: 'Cypress Inline Reporter',
     embeddedScreenshots: true,
     inlineAssets: true,
+    html: false,  
     overwrite: false,   
   },
   e2e: {
