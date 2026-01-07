@@ -10,8 +10,9 @@ module.exports = defineConfig({
     reportPageTitle: 'Cypress Inline Reporter',
     embeddedScreenshots: true,
     inlineAssets: true,
-    html: false,  
-    overwrite: false,   
+    html: false,
+    overwrite: false,
+    json: true,
   },
   e2e: {
     // We've imported your old cypress plugins here.
