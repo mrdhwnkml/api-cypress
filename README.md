@@ -1,6 +1,6 @@
 # API-CYPRESS
 
-Frontend testing for New Core using [Cypress](https://cypress.io)
+API testing for New Core using [Cypress](https://cypress.io)
 
 ## Table of Contents
 
