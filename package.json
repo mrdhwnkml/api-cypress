@@ -8,11 +8,11 @@
     "index.js"
   ],
   "scripts": {
-    "test:transfer": "npx cypress run --spec cypress/e2e/Transfer/**/* --browser chrome",
-    "test:user": "npx cypress run --spec cypress/e2e/User/**/* --browser chrome",
-    "test:LoginStatus": "npx cypress run --spec cypress/e2e/Login_Status/**/* --browser chrome",
-    "test:auth": "npx cypress run --spec cypress/e2e/Auth/**/* --browser chrome",
-    "test:account": "npx cypress run --spec cypress/e2e/Account/**/* --browser chrome",
+    "test:transfer": "npx cypress run --spec cypress/e2e/Transfer/**/* --browser chrome --reporter cypress-mochawesome-reporter",
+    "test:user": "npx cypress run --spec cypress/e2e/User/**/* --browser chrome --reporter cypress-mochawesome-reporter",
+    "test:LoginStatus": "npx cypress run --spec cypress/e2e/Login_Status/**/* --browser chrome --reporter cypress-mochawesome-reporter",
+    "test:auth": "npx cypress run --spec cypress/e2e/Auth/**/* --browser chrome --reporter cypress-mochawesome-reporter",
+    "test:account": "npx cypress run --spec cypress/e2e/Account/**/* --browser chrome --reporter cypress-mochawesome-reporter",
     "cy:open": "npx cypress open",
     "report:merge": "mkdir -p cypress/reports/json && mochawesome-merge cypress/reports/json/*.json > cypress/reports/json/combined.json",
     "report:generate": "marge cypress/reports/json/combined.json -f combined -o cypress/reports/html",
