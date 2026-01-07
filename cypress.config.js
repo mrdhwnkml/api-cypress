@@ -4,12 +4,13 @@ const path = require('path')
 // Populate process.env with values from .env file
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
-  video: false,
+  video: true,
   reporterOptions: {
     charts: true,
     reportPageTitle: 'Cypress Inline Reporter',
     embeddedScreenshots: true,
     inlineAssets: true,
+    overwrite: false,   
   },
   e2e: {
     // We've imported your old cypress plugins here.
