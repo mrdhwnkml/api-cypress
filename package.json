@@ -14,7 +14,7 @@
     "test:auth": "npx cypress run --spec cypress/e2e/Auth/**/* --browser chrome",
     "test:account": "npx cypress run --spec cypress/e2e/Account/**/* --browser chrome",
     "cy:open": "npx cypress open",
-    "report:merge": "mkdir -p cypress/reports/json && mochawesome-merge cypress/reports/json/*.json > cypress/reports/json/combined.json"
+    "report:merge": "mkdir -p cypress/reports/json && mochawesome-merge cypress/reports/json/*.json > cypress/reports/json/combined.json",
     "report:generate": "marge cypress/reports/json/combined.json -f combined -o cypress/reports/html",
     "report:mocha": "marge index.json",
     "report:clean": "rimraf mochawesome-report index.js",
