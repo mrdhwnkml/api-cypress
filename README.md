@@ -2,6 +2,10 @@
 
 API testing for New Core using [Cypress](https://cypress.io)
 
+#### Report Running Test!
+
+[![Cypress Report](https://img.shields.io/badge/Cypress-Report-blue)](https://mrdhwnkml.github.io/api-cypress/)
+
 ## Table of Contents
 
 - [Table of Contents](#markdown-header-table-of-contents)
