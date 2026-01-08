@@ -20,21 +20,22 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       path.resolve(__dirname, './cypress/support')
       require('cypress-mochawesome-reporter/plugin')(on)
-      require('./cypress/plugins/index.js')(on, config)
+
       on(
         'file:preprocessor',
         webpack({
           webpackOptions: {
             resolve: {
               alias: {
-                '@Support': path.resolve('cypress/support/'),
-                '@Fixtures': path.resolve('cypress/fixtures/'),
-                '@Utils': path.resolve('cypress/utils/'),
+                '@Support': path.resolve(__dirname, 'cypress/support'),
+                '@Fixtures': path.resolve(__dirname, 'cypress/fixtures'),
+                '@Utils': path.resolve(__dirname, 'cypress/utils'),
               },
             },
           },
         }),
       )
+      return config
     },
     paths: {
       '@components': 'cypress/support',
