@@ -1,7 +1,7 @@
 /// <reference types ='Cypress'/>
 import { faker } from '@faker-js/faker'
 import { loadToken } from '@Support/Auth'
-import { listArchetype } from '@Support/customerRelation/archetype'
+import { listArchetype } from '@Support/customerRelations/archetype'
 import { listActiveItem } from '@Support/catalog/item'
 import { listRegion } from '@Support/configuration/region'
 
