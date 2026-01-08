@@ -3,9 +3,9 @@ import { faker } from '@faker-js/faker'
 
 const cmaURL = Cypress.env('mobile_url')
 import { loadTokenCustomerApps, loadTokenDashboard } from '@Support/Auth'
-import { createVoucher, getActiveVoucher } from ''
+import { createVoucher, getActiveVoucher } from '@Utils/Voucher/Voucher'
 
-describe.skip('Apply Voucher on Mobile', async () => {
+describe.skip('Apply Voucher on Mobile', () => {
   let accessToken
   let header = data.header
   let voucherActive
