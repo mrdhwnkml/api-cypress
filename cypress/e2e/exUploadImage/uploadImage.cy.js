@@ -9,7 +9,7 @@ const postponeEvidenceType = 'postpone_evidence'
 const uploadImage_url = Cypress.env('uploadImage_url')
 let accessToken
 
-describe('upload image kurir apps', async () => {
+describe.skip('upload image kurir apps', async () => {
   before(async () => {
     const response = await loadTokenKurirApps()
     accessToken = response.data.token

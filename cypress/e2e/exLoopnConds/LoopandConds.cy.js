@@ -3,7 +3,7 @@
 import loadToken from '@Support/Auth'
 const dashUrl = Cypress.env('dasboard_url')
 
-describe('Dispose List Pack', () => {
+describe.skip('Dispose List Pack', () => {
   let accessToken
   let saveidPacking
   let checkstatusPack

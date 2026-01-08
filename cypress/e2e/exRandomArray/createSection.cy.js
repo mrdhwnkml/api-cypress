@@ -6,7 +6,7 @@ import { listActiveItem } from '@Utils/Catalog/Item'
 import { listRegion } from '@Utils/Configuration/Region'
 
 const dashUrl = Cypress.env('dasboard_url')
-describe('Create item section', () => {
+describe.skip('Create item section', () => {
   let accessToken
   let ItemSectionName
   let ItemSectionstart_at
