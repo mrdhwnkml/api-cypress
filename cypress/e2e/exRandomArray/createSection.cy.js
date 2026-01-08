@@ -1,9 +1,9 @@
 /// <reference types ='Cypress'/>
 import { faker } from '@faker-js/faker'
 import { loadToken } from '@Support/Auth'
-import { listArchetype } from '@Utils/Customer_Relation/Archetype'
-import { listActiveItem } from '@Utils/Catalog/Item'
-import { listRegion } from '@Utils/Configuration/Region'
+import { listArchetype } from '@Support/customerRelation/archetype'
+import { listActiveItem } from '@Support/catalog/item'
+import { listRegion } from '@Support/configuration/region'
 
 const dashUrl = Cypress.env('dasboard_url')
 describe.skip('Create item section', () => {
