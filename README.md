@@ -1,5 +1,4 @@
-<img src="https://github.com/user-attachments/assets/8cb287db-2de6-4775-b8f0-6e3666aa31bd" width="50" height="50"> **Cypress API Automation**
-
+# <img src="https://github.com/user-attachments/assets/8cb287db-2de6-4775-b8f0-6e3666aa31bd" alt="Cypress Logo" width="50" height="50" /> Cypress API Automation
 
 API testing for New Core using [Cypress](https://cypress.io)
 
