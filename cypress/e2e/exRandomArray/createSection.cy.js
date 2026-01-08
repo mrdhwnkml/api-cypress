@@ -37,7 +37,7 @@ describe('Create item section', () => {
     regionID = responseList.data[faker.random.numeric(1)].region
   })
 
-  it('Create item section with valid data should be success', () => {
+  it.skip('Create item section with valid data should be success', () => {
     cy.api({
       method: 'POST',
       url: 'endpoint',

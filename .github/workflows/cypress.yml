@@ -37,22 +37,7 @@ jobs:
 
       # Run Cypress tests
       - name: Run Cypress tests
-        run: |
-          npm run test:transfer
-          npm run test:user
-          npm run test:LoginStatus
-          npm run test:auth
-          npm run test:account
-
-      # Merge and generate Mochawesome report
-      - name: Merge Mochawesome reports
-        run: |
-          mkdir -p cypress/reports/json
-          npm run report:merge
-
-      # Generate HTML report from merged JSON
-      - name: Generate combined HTML report
-        run: npm run report:generate
+        run: npx cypress run --reporter cypress-mochawesome-reporter
 
       # Upload report as artifact (buat download)
       - name: Upload HTML report artifact
