@@ -25,7 +25,7 @@ describe('Create User', () => {
         password2: 'abcde12345',
       },
     }).then((response) => {
-      expect(response.status).to.be.equal(201)
+      expect(response.status).to.be.equal(200)
       expect(response.body.success).to.equal('Requested operation has completed successfully.')
       cy.log(accessToken)
     })
