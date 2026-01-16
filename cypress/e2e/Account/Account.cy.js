@@ -10,7 +10,7 @@ describe('Get Account', () => {
     accessToken = response.Authorization
   })
 
-  it.only('User get account should be success success', () => {
+  it('User get account should be success success', () => {
     cy.api({
       method: 'GET',
       url: '/api/account',
