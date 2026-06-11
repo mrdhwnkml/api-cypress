@@ -1,6 +1,6 @@
 {
-  "email": "jsmith",
-  "password": "demo1234",
+  "email": "admin",
+  "password": "admin",
   "header": {
     "appVersion": 4005086,
     "platform": "orca",
