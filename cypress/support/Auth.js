@@ -1,19 +1,31 @@
 import signUpData from '../fixtures/data.json'
 
-export default async function loadToken() {
-  const res = await fetch('/api/login', {
+
+const credentials = [
+  { username: signUpData.email, password: signUpData.password },
+  { username: 'jsmith', password: 'demo1234' }
+]
+
+
+export function loadToken(index = 0) {
+   const cred = credentials[index]
+
+     if (!cred) {
+    throw new Error('Semua credential gagal login')
+  }
+
+    return cy.request({
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+    url: '/api/login',
+    failOnStatusCode: false,
+    body: {
+      username: cred.username,
+      password: cred.password,
     },
-    body: JSON.stringify({
-      username: signUpData.email,
-      password: signUpData.password,
-    }),
+  }).then((res) => {
+  if (res.status === 200) {
+      return res.body.Authorization
+    }
+     return loadToken(index + 1)
   })
-
-  if (!res.ok) throw new Error(res.statusText)
-  const response = await res.json()
-
-  return response
 }

@@ -1,13 +1,14 @@
 /// <reference types ='Cypress'/>
-import loadToken from '@Support/Auth'
+import {loadToken } from '../../support/Auth'
 
 let emailExist
 let employeeCode
 describe('Get Account', () => {
   let accessToken
-  before(async () => {
-    const response = await loadToken()
-    accessToken = response.Authorization
+  before(() => {
+   loadToken().then((token) => {
+    accessToken = token
+   })
   })
 
   it('User get account should be success success', () => {
@@ -19,6 +20,7 @@ describe('Get Account', () => {
         Authorization: 'Bearer ' + accessToken,
       },
     }).then((response) => {
+    
       expect(response.status).to.be.equal(200)
       expect(response.body.Accounts).to.be.a('array')
 
