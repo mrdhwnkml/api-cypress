@@ -1,5 +1,5 @@
 /// <reference types ='Cypress'/>
-import {loadToken } from '../../support/Auth'
+import { loadToken } from '../../support/Auth'
 
 let totalCredit
 let totalDebit
@@ -11,9 +11,9 @@ describe('Detail Account', () => {
   let accessToken
   before(() => {
     loadToken().then((token) => {
-     accessToken = token
+      accessToken = token
     })
-   })
+  })
   it('User get list id saving account should be success', () => {
     cy.api({
       method: 'GET',

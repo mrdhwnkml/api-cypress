@@ -1,14 +1,14 @@
 /// <reference types ='Cypress'/>
-import {loadToken } from '../../support/Auth'
+import { loadToken } from '../../support/Auth'
 
 let checkStatus
 
 describe('Login Status', () => {
   let accessToken
- before(() => {
-   loadToken().then((token) => {
-    accessToken = token
-   })
+  before(() => {
+    loadToken().then((token) => {
+      accessToken = token
+    })
   })
 
   it('User check session(login) of specific user => if = TRUE', () => {

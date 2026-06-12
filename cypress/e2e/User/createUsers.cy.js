@@ -1,14 +1,14 @@
 /// <reference types ='Cypress'/>
 import { faker } from '@faker-js/faker'
-import {loadToken } from '../../support/Auth'
+import { loadToken } from '../../support/Auth'
 
 describe('Create User', () => {
   let accessToken
   before(() => {
     loadToken().then((token) => {
-     accessToken = token
+      accessToken = token
     })
-   })
+  })
 
   it('Create user with valid data should be success register', () => {
     cy.api({

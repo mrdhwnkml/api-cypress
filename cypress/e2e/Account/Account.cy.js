@@ -1,14 +1,14 @@
 /// <reference types ='Cypress'/>
-import {loadToken } from '../../support/Auth'
+import { loadToken } from '../../support/Auth'
 
 let emailExist
 let employeeCode
 describe('Get Account', () => {
   let accessToken
   before(() => {
-   loadToken().then((token) => {
-    accessToken = token
-   })
+    loadToken().then((token) => {
+      accessToken = token
+    })
   })
 
   it('User get account should be success success', () => {
@@ -20,7 +20,6 @@ describe('Get Account', () => {
         Authorization: 'Bearer ' + accessToken,
       },
     }).then((response) => {
-    
       expect(response.status).to.be.equal(200)
       expect(response.body.Accounts).to.be.a('array')
 

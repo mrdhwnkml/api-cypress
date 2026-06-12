@@ -1,6 +1,6 @@
 /// <reference types ='Cypress'/>
 import { faker } from '@faker-js/faker'
-import {loadToken } from '../../support/Auth'
+import { loadToken } from '../../support/Auth'
 
 let savingId
 let checkingId
@@ -9,11 +9,11 @@ let transferAmount = 100
 describe('Create Transfer', () => {
   let accessToken
 
- before(() => {
+  before(() => {
     loadToken().then((token) => {
-     accessToken = token
+      accessToken = token
     })
-   })
+  })
   it('User get list of account should be success', () => {
     cy.api({
       method: 'GET',
