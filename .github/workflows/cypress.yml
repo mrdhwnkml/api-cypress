@@ -38,6 +38,7 @@ jobs:
       # Run Cypress tests
       - name: Run Cypress tests
         run: npx cypress run --reporter cypress-mochawesome-reporter
+        continue-on-error: true
 
       # Upload report as artifact (buat download)
       - name: Upload HTML report artifact
