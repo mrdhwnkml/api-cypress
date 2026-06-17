@@ -3,6 +3,8 @@ import signUpData from '../fixtures/data.json'
 const credentials = [
   { username: signUpData.email, password: signUpData.password },
   { username: 'jsmith', password: 'demo1234' },
+  { username: "admin' --", password: 'a'
+  }
 ]
 
 export function loadToken(index = 0) {
